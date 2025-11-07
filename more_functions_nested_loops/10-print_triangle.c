@@ -1,37 +1,34 @@
-/*
- * File: 10-print_triangle.c
- * Auth: Brennan D Baraban
- */
-
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_triangle - Prints a triangle, using the character #.
- * @size: The size of the triangle.
+ * print_triangle - Entry point
+ *
+ * @size: triangle size
+ *
+ * Return: none
  */
+
 void print_triangle(int size)
 {
-	int hash, index;
+	int line;
+	int space;
+	int row;
 
-	if (size > 0)
+	if (size <= 0)
 	{
-		for (hash = 1; hash <= size; hash++)
-		{
-			for (index = size - hash; index > 0; index--)
-				_putchar(' ');
-
-			for (index = 0; index < hash; index++)
-				_putchar('#');
-
-			if (hash == size)
-				continue;
-
-			_putchar('\n');
-		}
+		_putchar('\n');
+		return;
 	}
-
-	_putchar('\n');
+	for (line = 1; line <= size; line++)
+	{
+		for (space = size - line; space > 0; space--)
+		{
+			_putchar(32); /* space character */
+		}
+		for (row = 1; row <= line; row++)
+		{
+			_putchar('#');
+		}
+		_putchar('\n');
+	}
 }
-
-
-

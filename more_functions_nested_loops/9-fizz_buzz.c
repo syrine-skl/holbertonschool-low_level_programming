@@ -1,41 +1,34 @@
-/*
- * File: 9-fizz_buzz.c
- * Auth: Brennan D Baraban
- */
-
 #include <stdio.h>
 
 /**
- * main - Prints the numbers from 1-100, but for multiples of three,
- *        Fizz is printed instead of the number, for multiples of five,
- *        Buzz, and for multiples of both three and five, FizzBuzz.
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int num;
+	int index;
 
-	for (num = 1; num <= 100; num++)
+	for (index = 1; index <= 100; index++)
 	{
-		if ((num % 3) == 0 && (num % 5) == 0)
-			printf("FizzBuzz");
-
-		else if ((num % 3) == 0)
-			printf("Fizz");
-
-		else if ((num % 5) == 0)
-			printf("Buzz");
-
+		if (index % 3 == 0 && index % 5 == 0)
+		{
+			printf("FizzBuzz ");
+		}
+		else if (index % 3 == 0)
+		{
+			printf("Fizz ");
+		}
+		else if (index % 5 == 0)
+		{
+			if (index != 100)
+			printf("Buzz ");
+			else
+				printf("Buzz");
+		}
 		else
-			printf("%d", num);
-
-		if (num == 100)
-			continue;
-		printf(" ");
+		printf("%d ", index);
 	}
-
 	printf("\n");
-
 	return (0);
 }

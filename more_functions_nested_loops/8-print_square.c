@@ -1,30 +1,28 @@
-/*
- * File: 8-print_square.c
- * Auth: Brennan D Baraban
- */
-
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_square - Prints a squareusing the character #.
- * @size: The size of the square.
+ * print_square - prints a square using the '#' character
+ *
+ * @size: the length and width of the square
+ *
+ * Return: nothing
  */
 void print_square(int size)
 {
-	int hgt, wid;
+	int line;
+	int row;
 
-	if (size > 0)
+	if (size <= 0)
 	{
-		for (hgt = 0; hgt < size; hgt++)
-		{
-			for (wid = 0; wid < size; wid++)
-				_putchar('#');
-
-			if (hgt == size - 1)
-				continue;
-			_putchar('\n');
-		}
+		_putchar('\n');
+		return;
 	}
-
-	_putchar('\n');
+	for (line = 0; line < size; line++)
+	{
+		for (row = 0; row < size; row++)
+		{
+			_putchar('#');
+		}
+		_putchar('\n');
+	}
 }

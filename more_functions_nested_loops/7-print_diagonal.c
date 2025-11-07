@@ -1,32 +1,27 @@
-/*
- * File: 7-print_diagonal.c
- * Auth: Brennan D Baraban
- */
-
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_diagonal - Draws a diagonal line using the \ character.
- * @n: The number of \ characters to be printed.
+ * print_diagonal - Entry point
+ * @n : number of times character '\' will appear
+ * Return: None
  */
 void print_diagonal(int n)
 {
-	int len, space;
+	int space;
+	int line;
 
-	if (n > 0)
+	if (n <= 0)
 	{
-		for (len = 0; len < n; len++)
-		{
-			for (space = 0; space < len; space++)
-				_putchar(' ');
-			_putchar('\\');
-
-			if (len == n - 1)
-				continue;
-
-			_putchar('\n');
-		}
+		_putchar('\n');
+		return;
 	}
-
-	_putchar('\n');
+	for (line = 0; line < n; line++)
+	{
+		for (space = 0; space < line; space++)
+		{
+			_putchar(32); /* space character */
+		}
+		_putchar(92); /* '\' character */
+		_putchar('\n');
+	}
 }

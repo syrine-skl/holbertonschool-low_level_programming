@@ -1,19 +1,18 @@
-/*
- * File: 3-print_numbers.c
- * Auth: Brennan D Baraban
- */
-
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_numbers - Prints the numbers from 0-9.
+ * print_numbers - print the numbers from 0 to 9
+ * Return: 0 (Success)
  */
 void print_numbers(void)
 {
-	int num;
+	int index = '0';
 
-	for (num = 0; num <= 9; num++)
-		_putchar((num % 10) + '0');
-
+	while (index <= '9')
+	{
+		_putchar(index);
+		index++;
+	}
 	_putchar('\n');
+return;
 }
